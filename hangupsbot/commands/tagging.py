@@ -35,6 +35,37 @@ def tagset(bot, event, *args):
     else:
         message = _("<b>supply type, id, tag</b>")
     yield from bot.coro_send_message(event.conv_id, message)
+@command.register(admin=True)
+def tagset(bot, event, *args):
+    """set a single tag. usage: tagset <"conv"|"user"|"convuser"> <id> <tag>"""
+    if len(args) == 3:
+        [type, id, tag] = args
+        type, id = _tagshortcuts(event, type, id)
+        if bot.tags.add(type, id, tag):
+            message = _("tagged <b><pre>{}</pre></b> with <b><pre>{}</pre></b>".format(id, tag))
+        else:
+            message = _("<b><pre>{}</pre></b> unchanged".format(id))
+    else:
+        message = _("<b>supply type, id, tag</b>")
+    yield from bot.coro_send_message(event.conv_id, message)
+
+@command.register(admin=True)
+def setperm(bot, event, *args):
+    """set a single user's permissions. usage: setperm <user> to <permission>"""
+    if len(args) == 3:
+        [id, devider, tag] = args
+        type = "user"
+        if devider == "to":
+            type, id = _tagshortcuts(event, type, id)
+            if bot.tags.add(type, id, tag):
+                message = _("Set the permissions of <b><pre>{}</pre></b> to <b><pre>{}</pre></b>".format(id, tag))
+            else:
+                message = _("<b><pre>{}</pre></b>'s permissions are unchanged".format(id))
+        else:
+            message = _("<b>Invalid syntax</b>")
+    else:
+        message = _("<b>supply the user's name and their permissions</b>")
+    yield from bot.coro_send_message(event.conv_id, message)  
 
 
 @command.register(admin=True)
