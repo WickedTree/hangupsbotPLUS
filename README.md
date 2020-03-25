@@ -131,10 +131,8 @@ The wiki also has a
 # Updating
 
 * Navigate to the bot directory (eg. `cd ~/hangupsbot`)
-* Change to the latest stable branch using `git checkout master`
-* `git pull` to pull the latest version of hangupsbot
-* `pip3 install -r requirements.txt --upgrade`
-* Restart the bot
+* Use `./update.sh` to run the auto-updater and start the bot
+* Alternatively use `/bot update` in the chat
 
 # Debugging
 
