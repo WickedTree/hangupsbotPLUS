@@ -1,8 +1,8 @@
 #!/bin/bash
 cd ~
-declare -a lines
-readarray -t lines ghcredentials.txt
-git clone https://${lines[0]}:${lines[1]}@https://github.com/WickedTree/odle-hangupsbot.git newhb
+passwrd="head -2 ghcrededntials| tail -1"
+usrnme="head -1 ghcredentials
+git clone https://${usrnme}:${passwrd}@https://github.com/WickedTree/odle-hangupsbot.git newhb
 sudo pkill python
 rm -rf hangoutsbot
 mv newhb hangoutsbot
