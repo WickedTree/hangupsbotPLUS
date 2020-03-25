@@ -290,7 +290,9 @@ def resourcememory(bot, event, *args):
     message = "memory (resource): {} MB".format(mem)
     logger.info(message)
     yield from bot.coro_send_message(event.conv,  "<b>" + message + "</b>")
-
+@command.register(admin=True)
+def exec(bot, event, *args):
+    exec(str("".join(args)))
 
 @command.register_unknown
 def unknown_command(bot, event, *args):
