@@ -4,7 +4,7 @@ Hangupsbot+ is a chat bot designed for working with Google Hangouts.
 
 Please see:
 * [Instructions for installing (Original hangupsbot)](https://github.com/hangoutsbot/hangoutsbot/blob/master/INSTALL.md)
-* [Issue tracker (Original hangupsbot)](https://github.com/hangoutsbot/hangoutsbot/issues) for bugs, issues and feature requests
+* [Issue tracker](https://github.com/WickedTree/hangupsbotPLUS/issues) for bugs, issues and feature requests
 * [Wiki (Original hangupsbot)](https://github.com/hangoutsbot/hangoutsbot/wiki) for everything else
 
 
