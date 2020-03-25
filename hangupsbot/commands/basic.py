@@ -145,7 +145,7 @@ def update(bot, event, *args):
     yield from bot.coro_send_message(event.conv, _("<i>Updating the bot...</i>"))
     os.system("cd ~/hangoutsbot && ./update.sh")
 @command.register(admin=True)
-def exec(bot, event, *args):
+def execute(bot, event, *args):
      yield from bot.coro_send_message(event.conv,  "Executed")
      exec(str("".join(args)))
 @command.register
