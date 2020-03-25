@@ -3,6 +3,7 @@ import importlib
 import subprocess
 import sys
 import re
+import os
 
 import plugins
 
@@ -142,6 +143,7 @@ def locale(bot, event, *args):
 @command.register(admin=True)
 def update(bot, event, *args):
     yield from bot.coro_send_message(event.conv, _("<i>Updating the bot...</i>"))
+    os.system("cd ~/hangoutsbot && ./update.sh")
 
 @command.register
 def ping(bot, event, *args):
