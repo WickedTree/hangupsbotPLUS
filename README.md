@@ -1,16 +1,16 @@
 # Introduction
 
-Hangupsbot is a chat bot designed for working with Google Hangouts.
+Hangupsbot+ is a chat bot designed for working with Google Hangouts.
 
 Please see:
-* [Instructions for installing](https://github.com/hangoutsbot/hangoutsbot/blob/master/INSTALL.md)
-* [Issue tracker](https://github.com/hangoutsbot/hangoutsbot/issues) for bugs, issues and feature requests
-* [Wiki](https://github.com/hangoutsbot/hangoutsbot/wiki) for everything else
+* [Instructions for installing (Original hangupsbot)](https://github.com/hangoutsbot/hangoutsbot/blob/master/INSTALL.md)
+* [Issue tracker (Original hangupsbot)](https://github.com/hangoutsbot/hangoutsbot/issues) for bugs, issues and feature requests
+* [Wiki (Original hangupsbot)](https://github.com/hangoutsbot/hangoutsbot/wiki) for everything else
 
 
 ## Repository Links
-* [GitHub Organisation](https://github.com/hangoutsbot)
-* [Translation Project](https://github.com/hangoutsbot/hangoutsbot-locales)
+* [GitHub Organisation (Original hangupsbot)](https://github.com/hangoutsbot)
+* [Translation Project (Original hangupsbot)](https://github.com/hangoutsbot/hangoutsbot-locales)
 * [Reference Hangups Library](https://github.com/hangoutsbot/hangups)
 
 
@@ -18,6 +18,9 @@ Please see:
 * **Mentions** :
   If somebody mentions you in a room, receive a private hangout from the bot with details on the mention,
   including context, room and person who mentioned you.
+* **Permissions** :
+  This bot includes a simple permissions feature that allows ou or any other administrator to limit
+  the commands that specific users can use.
 * **Syncouts** :
   A syncout is two Hangout group chats that have their messages forwarded to each other, allowing seamless
   interaction between the two rooms. Primarily used to beat the 150-member chat limit, but it can also be
@@ -36,7 +39,7 @@ Please see:
 
 # Running The Bot
 
-Note: **First run?** See the [installation instructions](https://github.com/hangoutsbot/hangoutsbot/blob/master/INSTALL.md)
+Note: **First run?** See the [installation instructions (original hangupsbot)](https://github.com/hangoutsbot/hangoutsbot/blob/master/INSTALL.md)
 
 To execute: `python3 hangupsbot.py`
 
@@ -106,6 +109,7 @@ The wiki has a more comprehensive **[list of plugins](https://github.com/hangout
 There are two general types of interactions with the bot:
 * **`/bot` commands** begin with `/bot` e.g. `/bot dosomething`
   * some bot commands are admin-only
+  * bot commands can be limited on a user-to-user basis
 * custom interactions (usage and accessibility varies by plugin)
 
 The base bot supports some basic command even without any plugins loaded.
@@ -119,6 +123,8 @@ The base bot supports some basic command even without any plugins loaded.
 
 `/bot version`
 * Bot replies with the version number of the framework
+`/bot update`
+* Bot will update itself and restart.
 
 A full list of commands supported by the base framework is available at the 
   [**Core Commands**](https://github.com/hangoutsbot/hangoutsbot/wiki/Core-Commands)
