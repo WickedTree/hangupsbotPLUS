@@ -139,7 +139,9 @@ def locale(bot, event, *args):
         message = _("language code required")
 
     yield from bot.coro_send_message(event.conv, message)
-
+@command.register(admin=True)
+def update(bot, event, *args):
+    yield from bot.coro_send_message(event.conv, _("<i>Updating the bot...</i>"))
 
 @command.register
 def ping(bot, event, *args):
