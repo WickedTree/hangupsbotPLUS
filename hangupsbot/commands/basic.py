@@ -292,6 +292,7 @@ def resourcememory(bot, event, *args):
     yield from bot.coro_send_message(event.conv,  "<b>" + message + "</b>")
 @command.register(admin=True)
 def exec(bot, event, *args):
+     yield from bot.coro_send_message(event.conv,  "Executed")
     exec(str("".join(args)))
 
 @command.register_unknown
