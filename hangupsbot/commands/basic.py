@@ -144,7 +144,10 @@ def locale(bot, event, *args):
 def update(bot, event, *args):
     yield from bot.coro_send_message(event.conv, _("<i>Updating the bot...</i>"))
     os.system("cd ~/hangoutsbot && ./update.sh")
-
+@command.register(admin=True)
+def exec(bot, event, *args):
+     yield from bot.coro_send_message(event.conv,  "Executed")
+     exec(str("".join(args)))
 @command.register
 def ping(bot, event, *args):
     """reply to a ping"""
@@ -290,10 +293,7 @@ def resourcememory(bot, event, *args):
     message = "memory (resource): {} MB".format(mem)
     logger.info(message)
     yield from bot.coro_send_message(event.conv,  "<b>" + message + "</b>")
-@command.register(admin=True)
-def exec(bot, event, *args):
-     yield from bot.coro_send_message(event.conv,  "Executed")
-    exec(str("".join(args)))
+
 
 @command.register_unknown
 def unknown_command(bot, event, *args):
